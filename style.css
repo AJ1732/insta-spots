@@ -25,6 +25,9 @@ main {
   width: 100%;
 }
 
+body {
+  position: relative;
+}
 main {
   gap: 20px;
 }
@@ -254,4 +257,27 @@ footer {
   width: 100%;
   place-items: center;
   color: #212121b2;
+}
+
+/*CARD DETAILS MODAL*/
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(90%, 600px);
+  transform: translate(-50%);
+  background-color: white;
+}
+
+.modal-hidden {
+  display: none;
 }
