@@ -148,7 +148,9 @@ header > img {
   }
 }
 
-/* Mobile view */
+
+
+/* Mobile view   from Abdullahi*/
 #profile {
   display: flex;
   flex-direction: column;
@@ -166,9 +168,10 @@ header > img {
   gap: 1rem;
   align-items: center;
 }
+
 .left img {
-  max-width: 100%;
-  height: auto;
+ width: 200px;
+ height: 200px;
 }
 .right {
   display: flex;
@@ -205,7 +208,53 @@ p {
   width: 400px;
 }
 
-/* desktop view */
+
+/* Modal from Abdullahi */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+ #imagePreview {
+  max-width: 150px;      /* Limit preview size */
+  max-height: 150px;
+  display: none;         /* Hidden by default */
+  margin-top: 10px;      /* Space from input */
+  border-radius: 8px;    /* Rounded corners */
+  object-fit: cover;     /* Crop if needed */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}  
+
+
+
+
+
+
+
+/* desktop view  from Abdullahi */
+
 @media (min-width: 768px) {
   .profile {
     flex-direction: row;
@@ -221,25 +270,40 @@ p {
   }
 
   .right button {
-    margin-top: -4rem; /* you can adjust this  button base on the image section width */
+    margin-top: -4rem;  /* you can adjust this  button base on the image section width */
     max-width: 100px;
   }
 
   .left button {
+    display: flex;
+    margin-right: auto;
     margin-top: 8rem;
-    transform: translateX(-80%);
+    /* transform: translateX(-80%); */
   }
   .details p {
-    margin-left: -9rem;
+    /* margin-left: -9rem; */
     margin-top: 1rem;
     font-size: 18px;
+    text-align: justify;
   }
 
+ .details h1{
+  text-align: justify;
+}
+.detaails p{
+  text-align: justify !important;
+}
+
+
   .left img {
-    max-width: 100%;
+    width: 200px;
     height: 210px;
   }
 }
+
+
+
+
 
 /* Footer Styles */
 footer {

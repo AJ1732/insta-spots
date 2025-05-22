@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Insta Spots</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header id="header">
-      <img src="./assets/Spotlogo.png" alt="logo icon" />
-      SPOTS
-    </header>
 
-    <main>
-      <!-- PROFILE SECTION -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Insta Spots</title>
+</head>
 
-      <section id="profile">
-        <div class="left">
-          <img src="./assets/Avatar.png" alt="profile picture" />
-          <div class="details">
-            <h1>Bessie Coleman</h1>
-            <p>Civil Aviator</p>
-            <button id="secondary" class="button button--secondary">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="13.0676"
-                  y="4.5451"
-                  width="11.6506"
-                  height="3.21396"
-                  transform="rotate(135 13.0676 4.5451)"
-                  fill="currentColor"
-                />
-                <path
-                  d="M14.2036 1.13628C14.8312 1.76384 14.8312 2.78132 14.2036 3.40889L13.6354 3.97704L11.3628 1.70443L11.931 1.13628C12.5586 0.508714 13.576 0.508714 14.2036 1.13628Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M1.54021 13.1538L2.55674 10.5108L4.82935 12.7834L2.18637 13.8C1.782 13.9555 1.38468 13.5582 1.54021 13.1538Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <span>Edit Profile</span>
-            </button>
-          </div>
-        </div>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <img src="./assets/Spotlogo.png" alt="logo icon" />
+    SPOTS
+  </header>
 
-        <!-- PRIMARY BUTTON -->
-        <div class="right">
-          <button class="button button--primary">
-            <object
-              type="image/svg+xml"
-              data="/assets/plus-icon.svg"
-              class="button__icon--primary"
-            ></object>
-            <span>New Post</span>
+  <main>
+    <!-- PROFILE SECTION -->
+
+    <section id="profile" class="profile">
+      <div class="left">
+
+        <img id="profileImage" src="./assets/Avatar.png" alt="profile picture" />
+
+
+        <!-- <img src="./assets/Avatar.png" alt="profile picture" /> -->
+        <div class="details">
+          <h1 id="profileName">Bessie Coleman</h1>
+          <p id="profileJob">Civil Aviator</p>
+          <button id="edit" id="secondary" class="button button--secondary">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="13.0676" y="4.5451" width="11.6506" height="3.21396" transform="rotate(135 13.0676 4.5451)"
+                fill="currentColor" />
+              <path
+                d="M14.2036 1.13628C14.8312 1.76384 14.8312 2.78132 14.2036 3.40889L13.6354 3.97704L11.3628 1.70443L11.931 1.13628C12.5586 0.508714 13.576 0.508714 14.2036 1.13628Z"
+                fill="currentColor" />
+              <path
+                d="M1.54021 13.1538L2.55674 10.5108L4.82935 12.7834L2.18637 13.8C1.782 13.9555 1.38468 13.5582 1.54021 13.1538Z"
+                fill="currentColor" />
+            </svg>
+            <span>Edit Profile</span>
           </button>
         </div>
-      </section>
+      </div>
 
-      <hr class="divider-1" />
+      <!-- PRIMARY BUTTON -->
+      <div class="right">
+        <button class="button button--primary">
+          <object type="image/svg+xml" data="/assets/plus-icon.svg" class="button__icon--primary"></object>
+          <span>New Post</span>
+        </button>
+      </div>
 
-      <!-- PHOTOS SECTION -->
-      <section id="photos">
-        <div class="images">
-          <!-- <figure class="image">
+      <!-- model -->
+      <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Edit Profile </h2>
+           <span style='color: green; cursor: pointer;' id="showModal">Preview</span>
+          <form id="editProfileForm">
+            <input type="text" id="editName" placeholder="Name" minlength="5" maxlength="20"  autofocus required/>
+            <input type="text" id="editBio" placeholder="Job"   minlength="5" maxlength="20" autofocus required/>
+            <input type="file" id="editImage" title="Photo" accept="image/*" required />
+            <button type="submit" style='color: green; cursor: pointer;'>Save</button>
+            <button type="button" id="closeEditModal" style="color: red; cursor: pointer;">X</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="previewModal" class="modal hidden">
+        <div class="modal-content">
+          <!-- <input type="file" id="editImage" title="Image" accept="image/*" /> -->
+         
+          <img id="previewImage" src="" alt="Preview" 
+            style="display:none; max-width: 150px; margin-top: 10px;"
+          />
+          <h3 id="previewTitle">title</h3>
+          <h3 id="previewJob">job</h3>
+          <button id="closePreviewModal" style="color: red; cursor: pointer;">X </button>
+        </div>
+      </div>
+
+
+
+
+    </section>
+
+    <hr class="divider-1" />
+
+    <!-- PHOTOS SECTION -->
+    <section id="photos">
+      <div class="images">
+        <!-- <figure class="image">
             <img
               src="./assets/insta-spots/pexels-kassandre-pedro-8639743 1.png"
             />
@@ -87,19 +106,20 @@
               /></span>
             </figcaption>
           </figure> -->
-        </div>
-      </section>
-    </main>
-
-    <!-- <hr /> -->
-
-    <!-- FOOTER SECTION -->
-    <footer class="footer">
-      <div class="footer-container">
-        <p>2023 © Spots</p>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script type="module" src="./js/script.js"></script>
-  </body>
+  <!-- <hr /> -->
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>2023 © Spots</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/script.js"></script>
+</body>
+
 </html>
