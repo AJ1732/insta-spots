@@ -20,7 +20,7 @@ export function imageCardModal() {
     `;
     imgDetails.insertAdjacentHTML("afterbegin", html);
 
-    //CLOSE MODAL
+    //CLOSE MODAL CONTAINER
     const closeBtn = document.querySelector(".close-modal-btn");
     closeBtn.addEventListener("click", () => {
       closeModal();
