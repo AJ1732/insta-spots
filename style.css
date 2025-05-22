@@ -274,10 +274,16 @@ footer {
   top: 50%;
   left: 50%;
   width: min(90%, 600px);
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   background-color: white;
+  padding: 1rem 0.5rem;
 }
 
 .modal-hidden {
   display: none;
+}
+
+.modal-img {
+  width: 100%;
+  object-fit: contain;
 }
