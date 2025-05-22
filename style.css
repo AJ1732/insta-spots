@@ -127,6 +127,7 @@ header > img {
 }
 .image > img {
   width: 100%;
+  cursor: pointer;
   aspect-ratio: 1/1;
   background-color: #212121;
   height: auto;
