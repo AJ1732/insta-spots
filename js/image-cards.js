@@ -1,30 +1,4 @@
-const IMAGES_DATA = [
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1.png",
-    title: "Val Thorens",
-    path: "",
-  },
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1-1.png",
-    title: "Restaurant terrace",
-  },
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1-2.png",
-    title: "An outdoor cafee",
-  },
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1-3.png",
-    title: "A very long bridge, over the forest...",
-  },
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1-4.png",
-    title: "Tunnel with morning light",
-  },
-  {
-    src: "./assets/insta-spots/pexels-kassandre-pedro-8639743 1-5.png",
-    title: "Mountain house",
-  },
-];
+import { IMAGES_DATA } from "./image-card-data.js";
 
 export function imageCards() {
   const images = document.querySelector(".images");
@@ -40,9 +14,9 @@ export function imageCards() {
 
     // Create the span element and append it to the figcaption
     const figcaptionSpan = document.createElement("span");
-    const spanImg = document.createElement("svg");
-    const spanImgPath = document.createElement("path");
-
+   figcaptionSpan.innerHTML=`<svg id="favourite-icon" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.9512 1.05664C17.3161 0.856584 18.8067 1.15981 20.1602 2.32812L20.4287 2.57324C22.6597 4.72264 22.3285 8.02556 20.5967 9.89355L20.4248 10.0693L11.5 18.6025L2.57422 10.0693H2.5752C0.754421 8.29659 0.296669 5.00618 2.36328 2.78516L2.57129 2.57324C3.99417 1.20243 5.593 0.843258 7.04883 1.05664C8.5402 1.27524 9.89546 2.09997 10.7266 3.11523L11.5 4.06055L12.2734 3.11523C13.1045 2.09997 14.4598 1.27524 15.9512 1.05664Z" stroke="#212121" stroke-width="2"/>
+  </svg>`;
 
     // Append the child elements into imageCard
     imageFigcaption.setAttribute("class", "favourite");
@@ -60,17 +34,7 @@ export function imageCards() {
     // Append the child image into the parent .images element container
     images.append(imageCard);
      
-    // Append the image child to the span element
-  figcaptionSpan.append(spanImg);
-
-  // Append the path element to the span element
-  spanImg.append(spanImgPath);
-
-  // Set the attribute d for the path element so we can get it to display like an image
-  spanImgPath.setAttribute(
-    "d",
-    "M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181"
-  );
+   
   });
 
  
