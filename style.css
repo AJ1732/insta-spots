@@ -266,6 +266,10 @@ footer {
   color: #212121b2;
 }
 
+.favourite-icon:hover {
+  fill: pink;
+}
+
 /*CLOSE CARD DETAILS MODAL*/
 #close-modal {
   position: fixed;
