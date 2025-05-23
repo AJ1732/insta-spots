@@ -27,9 +27,6 @@
       <div class="left">
 
         <img id="profileImage" src="./assets/Avatar.png" alt="profile picture" />
-
-
-        <!-- <img src="./assets/Avatar.png" alt="profile picture" /> -->
         <div class="details">
           <h1 id="profileName">Bessie Coleman</h1>
           <p id="profileJob">Civil Aviator</p>
@@ -58,32 +55,28 @@
       </div>
 
       <!-- model -->
-      <div id="editModal" class="modal hidden">
+      <dialog id="editModal" class="modal ">
         <div class="modal-content">
           <h2>Edit Profile </h2>
-           <span style='color: green; cursor: pointer;' id="showModal">Preview</span>
+          <span style='color: gray; cursor: pointer;' id="showModal">Preview</span> <br/>
           <form id="editProfileForm">
-            <input type="text" id="editName" placeholder="Name" minlength="5" maxlength="20"  autofocus required/>
-            <input type="text" id="editBio" placeholder="Job"   minlength="5" maxlength="20" autofocus required/>
-            <input type="file" id="editImage" title="Photo" accept="image/*" required />
-            <button type="submit" style='color: green; cursor: pointer;'>Save</button>
-            <button type="button" id="closeEditModal" style="color: red; cursor: pointer;">X</button>
+            <input type="text" id="editName" placeholder="Name" minlength="5" maxlength="20" autofocus required />
+            <input type="text" id="editBio" placeholder="Job" minlength="5" maxlength="20" autofocus required />
+            <input type="file" id="editImage" title="Photo" accept="image/*" />
+            <button type="submit" style=' cursor: pointer;' class="Update-btn">Update</button>
+            <button type="button" id="closeEditModal" style="color: red; cursor: pointer;" title="close">X</button>
           </form>
         </div>
-      </div>
+      </dialog>
 
-      <div id="previewModal" class="modal hidden">
+      <dialog id="previewModal"  class="modal ">
         <div class="modal-content">
-          <!-- <input type="file" id="editImage" title="Image" accept="image/*" /> -->
-         
-          <img id="previewImage" src="" alt="Preview" 
-            style="display:none; max-width: 150px; margin-top: 10px;"
-          />
+          <img id="previewImage" src="" alt="Preview" style="display:none; max-width: 150px; margin-top: 10px;" />
           <h3 id="previewTitle">title</h3>
           <h3 id="previewJob">job</h3>
-          <button id="closePreviewModal" style="color: red; cursor: pointer;">X </button>
+          <button id="closePreviewModal" style="color: red; cursor: pointer;" title="close" autofocus>X </button>
         </div>
-      </div>
+      </dialog>
 
 
 
