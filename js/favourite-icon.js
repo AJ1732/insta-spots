@@ -14,6 +14,7 @@ favouriteIcons.forEach(icon => {
     icon.classList.remove("liked");
     icon.style.fill = "";
     console.log("Icon unliked");
+    
   } else {
     icon.classList.add("liked");
     icon.style.fill = "#ff0000";
