@@ -255,3 +255,7 @@ footer {
   place-items: center;
   color: #212121b2;
 }
+
+.favourite-icon:hover {
+  fill: pink;
+}
