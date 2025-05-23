@@ -267,16 +267,9 @@ footer {
 }
 
 /*CLOSE CARD DETAILS MODAL*/
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.modal {
-  position: absolute;
+#close-modal {
+  position: fixed;
+  border: none;
   z-index: 2;
   top: 50%;
   left: 50%;
@@ -284,12 +277,14 @@ footer {
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 1rem;
+
   border-radius: 10px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 }
 
-.modal-hidden {
-  display: none;
+#close-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
 }
 
 .modal-img {
