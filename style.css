@@ -22,7 +22,6 @@ main {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  width: 100%;
 }
 
 main {
@@ -51,7 +50,6 @@ header {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 4px;
-  width: 100%;
 }
 header > img {
   width: 10px;
@@ -114,12 +112,9 @@ header > img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 100%;
 }
 .image > img {
   width: 100%;
-  aspect-ratio: 1/1;
-  background-color: #212121;
   height: auto;
   display: block;
   border-radius: 10px;
