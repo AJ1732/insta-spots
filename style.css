@@ -11,6 +11,9 @@
 
   --font-dm-mono: "DM Mono", monospace;
   --font-poppins: "Poppins", sans-serif;
+
+  --modal-close-btn-bg-clr: #ff0000;
+  --modal-close-btn-text-clr: #fff;
 }
 
 html {
@@ -25,10 +28,16 @@ main {
   width: 100%;
 }
 
+body {
+  position: relative;
+}
 main {
   gap: 20px;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+}
 main,
 footer {
   max-width: 1296px;
@@ -118,6 +127,7 @@ header > img {
 }
 .image > img {
   width: 100%;
+  cursor: pointer;
   aspect-ratio: 1/1;
   background-color: #212121;
   height: auto;
@@ -148,7 +158,9 @@ header > img {
   }
 }
 
-/* Mobile view */
+
+
+/* Mobile view   from Abdullahi*/
 #profile {
   display: flex;
   flex-direction: column;
@@ -166,9 +178,10 @@ header > img {
   gap: 1rem;
   align-items: center;
 }
+
 .left img {
-  max-width: 100%;
-  height: auto;
+ width: 200px;
+ height: 200px;
 }
 .right {
   display: flex;
@@ -205,7 +218,104 @@ p {
   width: 400px;
 }
 
-/* desktop view */
+
+/* Modal from Abdullahi */
+
+.modal{
+  & > *{
+  margin: 0 0 0 0;
+}
+
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  background: #fff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+
+
+.modal::backdrop{
+background-image: linear-gradient(
+45deg,
+magenta,
+rebeccapurple,
+dodgerblue,
+green
+);
+  opacity: .75;
+}
+
+dialog{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#closePreviewModal{
+  position: absolute;
+  left: 92%;
+  bottom: 85%;
+  border: unset;
+  font-size: larger;
+  background: transparent;
+}
+
+#closeEditModal{
+  position: absolute;
+  left: 92%;
+  bottom: 85%;
+  border: unset;
+  font-size: larger;
+  background: transparent;
+}
+
+
+#editProfileForm input[type="text"]{
+  height: 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#editProfileForm #editImage{
+height: 2rem;
+}
+
+#editName, #editBio{
+  font-size: 16px;
+  padding: 5px;
+  color: grey;
+  opacity: 0.8;
+}
+
+.Update-btn{
+  font-size: normal;
+  display: block;
+  margin: 0 auto;
+  height: 1.5rem;
+ padding: 0 1rem;
+  color: black;
+  background: rgb(243, 241, 241);
+  &:hover{
+    background: transparent
+    
+  }
+}
+
+
+
+.modal-content h2{
+  margin-bottom: -0.5rem;
+}
+
+
+
+
+
+/* desktop view  from Abdullahi */
+
 @media (min-width: 768px) {
   .profile {
     flex-direction: row;
@@ -221,25 +331,40 @@ p {
   }
 
   .right button {
-    margin-top: -4rem; /* you can adjust this  button base on the image section width */
+    margin-top: -4rem;  /* you can adjust this  button base on the image section width */
     max-width: 100px;
   }
 
   .left button {
+    display: flex;
+    margin-right: auto;
     margin-top: 8rem;
-    transform: translateX(-80%);
+    /* transform: translateX(-80%); */
   }
   .details p {
-    margin-left: -9rem;
+    /* margin-left: -9rem; */
     margin-top: 1rem;
     font-size: 18px;
+    text-align: justify;
   }
 
+ .details h1{
+  text-align: justify;
+}
+.detaails p{
+  text-align: justify !important;
+}
+
+
   .left img {
-    max-width: 100%;
+    width: 200px;
     height: 210px;
   }
 }
+
+
+
+
 
 /* Footer Styles */
 footer {
@@ -254,4 +379,48 @@ footer {
   width: 100%;
   place-items: center;
   color: #212121b2;
+}
+
+.favourite-icon:hover {
+  fill: pink;
+}
+
+/*CLOSE CARD DETAILS MODAL*/
+#close-modal {
+  position: fixed;
+  border: none;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(90%, 600px);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
+}
+
+#close-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+}
+.close-modal-btn {
+  border: none;
+  color: var(--modal-close-btn-text-clr);
+  background-color: var(--modal-close-btn-bg-clr);
+  padding: 1rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  align-self: flex-end;
 }
