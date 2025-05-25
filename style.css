@@ -222,10 +222,6 @@ p {
 /* Modal from Abdullahi */
 
 .modal{
-  & > *{
-  margin: 0 0 0 0;
-}
-
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   background: #fff;
   padding: 2rem;
@@ -234,7 +230,9 @@ p {
   border-radius: 8px;
 }
 
-
+.modal > *{
+  margin: 0 0 0 0;
+}
 
 .modal::backdrop{
 background-image: linear-gradient(
@@ -298,10 +296,10 @@ height: 2rem;
  padding: 0 1rem;
   color: black;
   background: rgb(243, 241, 241);
-  &:hover{
-    background: transparent
-    
-  }
+}
+.Update-btn:hover{
+  background: transparent
+  
 }
 
 
@@ -424,3 +422,4 @@ footer {
   margin-top: 0.8rem;
   align-self: flex-end;
 }
+

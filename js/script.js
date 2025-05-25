@@ -5,8 +5,13 @@ import { favouriteIcon } from "./favourite-icon.js";
 import { newPostModal } from "./new-post-modal.js";
 
 // FUNCTION CALLS
-imageCards();
-imageCardModal();
-editProfile();
-favouriteIcon();
-newPostModal();
+document.addEventListener("DOMContentLoaded", () => {
+  imageCards();
+  imageCardModal();
+  editProfile();
+  favouriteIcon();
+});
+
+document.querySelector(".button--primary")?.addEventListener("click", () => {
+  newPostModal();
+});
