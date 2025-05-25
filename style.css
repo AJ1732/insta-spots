@@ -11,6 +11,9 @@
 
   --font-dm-mono: "DM Mono", monospace;
   --font-poppins: "Poppins", sans-serif;
+
+  --modal-close-btn-bg-clr: #ff0000;
+  --modal-close-btn-text-clr: #fff;
 }
 
 html {
@@ -25,10 +28,16 @@ main {
   width: 100%;
 }
 
+body {
+  position: relative;
+}
 main {
   gap: 20px;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+}
 main,
 footer {
   max-width: 1296px;
@@ -118,6 +127,7 @@ header > img {
 }
 .image > img {
   width: 100%;
+  cursor: pointer;
   aspect-ratio: 1/1;
   background-color: #212121;
   height: auto;
@@ -373,4 +383,44 @@ footer {
 
 .favourite-icon:hover {
   fill: pink;
+}
+
+/*CLOSE CARD DETAILS MODAL*/
+#close-modal {
+  position: fixed;
+  border: none;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(90%, 600px);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
+}
+
+#close-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+}
+.close-modal-btn {
+  border: none;
+  color: var(--modal-close-btn-text-clr);
+  background-color: var(--modal-close-btn-bg-clr);
+  padding: 1rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  align-self: flex-end;
 }
